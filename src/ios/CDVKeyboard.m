@@ -198,6 +198,13 @@ static IMP WKOriginalImp;
         screen.size.height -= keyboardIntersection.size.height;
         self.webView.scrollView.scrollEnabled = !self.disableScrollingInShrinkView;
     }
+    
+    // Sets the webView back to the original position after scrolling
+    if (self.keyboardIsVisible) {
+        self.offsetY = screen.origin.y * -1;
+    } else {
+        screen.origin.y = self.offsetY;
+    }
 
     // A view's frame is in its superview's coordinate system so we need to convert again
     self.webView.frame = [self.webView.superview convertRect:screen fromView:self.webView];
