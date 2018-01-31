@@ -28,7 +28,7 @@
 @interface CDVKeyboard () <UIScrollViewDelegate>
 
 @property (nonatomic, readwrite, assign) BOOL keyboardIsVisible;
-@property (nonatomic, readwrite, assign) BOOL offsetY;
+@property (nonatomic, readwrite, assign) CGFloat offsetY;
 
 @end
 
